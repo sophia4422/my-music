@@ -1,9 +1,8 @@
 const express = require("express");
-const { renderHomePage, renderNotePage } = require("../controllers/view");
+const artistRouter = require("./artist");
 
 const router = express.Router();
 
-router.get("/", renderHomePage);
-router.get("/notes", renderNotePage);
+router.use("/artist", artistRouter);
 
 module.exports = router;
